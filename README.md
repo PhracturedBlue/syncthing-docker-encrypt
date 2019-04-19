@@ -36,10 +36,10 @@ decrupt your data.**
 
 7. Start syncthing with:
    ```
-docker run --name SyncThing -v $CRYPT_PATH:/var/crypt \
--p 8384:8384 -p 22000:22000  -p 21027:21027/udp \
---device /dev/fuse --cap-add SYS_ADMIN --security-opt apparmor:unconfined \
--e GOCRYPT_KEY=<pass-phrase from step 4> \
---restart on-failure -v \
-syncthing:encrypt
-```
+   docker run --name SyncThing -v $CRYPT_PATH:/var/crypt \
+   -p 8384:8384 -p 22000:22000  -p 21027:21027/udp \
+   --device /dev/fuse --cap-add SYS_ADMIN --security-opt apparmor:unconfined \
+   -e GOCRYPT_KEY=<pass-phrase from step 4> \
+   --restart on-failure -v \
+   syncthing:encrypt
+   ```
