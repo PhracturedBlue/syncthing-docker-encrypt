@@ -43,3 +43,6 @@ decrupt your data.**
    --restart on-failure -v \
    syncthing:encrypt
    ```
+ 
+ 8. After configuration, you may want to relaunch docker without exposing port `8384`
+    To restrict the addition of unauthorized devices
