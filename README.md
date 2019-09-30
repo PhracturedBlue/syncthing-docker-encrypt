@@ -40,7 +40,7 @@ decrypt your data.**
    -p 8384:8384 -p 22000:22000  -p 21027:21027/udp \
    --device /dev/fuse --cap-add SYS_ADMIN --security-opt apparmor:unconfined \
    -e GOCRYPT_KEY=<pass-phrase from step 4> \
-   --restart on-failure -d \
+   --restart on-failure:5 -d \
    syncthing:encrypt
    ```
  
