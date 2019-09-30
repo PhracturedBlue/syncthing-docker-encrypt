@@ -9,12 +9,12 @@ to be able to `docker exec` into the running image.
 
 The gocryptfs key is built in memory from a part that exists only
 in the Dockerfile and part passed in during runtime so that binary examination
-is insufficiuent to decrypt te key.
+is insufficiuent to decrypt the key.
 
 **NOTE: This is not a secure system!  While it should significantly increase the
 effort to access your SyncThing filesystem, someone with access to the Docker
 image and the invocation could, with enough skill, determine the gocryt key and
-decrupt your data.**
+decrypt your data.**
 
 ## Instructions
 1. Download the pre-built gocrypt binary (or source and build yourself) from
@@ -40,7 +40,7 @@ decrupt your data.**
    -p 8384:8384 -p 22000:22000  -p 21027:21027/udp \
    --device /dev/fuse --cap-add SYS_ADMIN --security-opt apparmor:unconfined \
    -e GOCRYPT_KEY=<pass-phrase from step 4> \
-   --restart on-failure -v \
+   --restart on-failure -d \
    syncthing:encrypt
    ```
  
